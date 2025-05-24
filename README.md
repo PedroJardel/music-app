@@ -21,31 +21,19 @@ Este projeto é uma API desenvolvida em **Laravel 12.x** com **PHP 8.4.2**, que 
 git clone https://github.com/PedroJardel/music-app.git
 ```
 
-2. Instale as dependências:
+2. Instale as dependências vai docker:
 
 ```
-docker compose run --rm composer install
+docker compose run --rm composer
 ```
 
-3. Copie o .env de exemplo o configure:
-
-```
-composer run post-root-package-install
-```
-
-4. Gere a chave da aplicação:
-
-```
-php artisan key:generate --ansi
-```
-
-5. Suba os containers com Docker:
+3. Suba os containers com Docker:
 
 ```
 docker-compose up --build -d
 ```
 
-> Ao final esses comandos garantem que as dependências do projeto e os containers sejam construídos corretamente, as migrações são feitas e a aplicação esteja disponível em localhost:8000 
+> Ao final esses comandos garantem que as dependências do projeto e os containers sejam construídos corretamente com as migrações e a aplicação disponível em localhost:8000 
 
 ## 🧩 Funcionalidades
 

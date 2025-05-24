@@ -14,6 +14,7 @@ services:
         apt-get update &&
         apt-get install -y git unzip curl libpq-dev &&
         docker-php-ext-install pdo pdo_pgsql &&
+        php artisan key:generate --ansi &&
         php artisan migrate &&
         php artisan serve --host=0.0.0.0 --port=8000
       "
@@ -24,7 +25,11 @@ services:
     volumes:
       - ./:/app
     working_dir: /app
-    command: install
+    command: >
+      bash -c "
+      composer install && 
+      composer run post-root-package-install
+      "
 
   db:
     image: postgres
