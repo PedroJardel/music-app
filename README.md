@@ -24,7 +24,7 @@ git clone https://github.com/PedroJardel/music-app.git
 2. Instale as dependências:
 
 ```
-composer install
+docker compose run --rm composer install
 ```
 
 3. Copie o .env de exemplo o configure:
@@ -42,14 +42,10 @@ php artisan key:generate --ansi
 5. Suba os containers com Docker:
 
 ```
-docker-compose up -d
+docker-compose up --build -d
 ```
 
-6. Execute as migrations:
-
-```
-php artisan migrate
-```
+> Ao final esses comandos garantem que as dependências do projeto e os containers sejam construídos corretamente, as migrações são feitas e a aplicação esteja disponível em localhost:8000 
 
 ## 🧩 Funcionalidades
 
