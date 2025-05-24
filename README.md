@@ -21,19 +21,29 @@ Este projeto é uma API desenvolvida em **Laravel 12.x** com **PHP 8.4.2**, que 
 git clone https://github.com/PedroJardel/music-app.git
 ```
 
-2. Instale as dependências vai docker:
+2. Entra na pasta do projeto:
+
+```
+cd music-app
+```
+
+3. Instale as dependências via docker:
 
 ```
 docker compose run --rm composer
 ```
 
-3. Suba os containers com Docker:
+4. Suba os containers com Docker:
 
 ```
 docker-compose up --build -d
 ```
 
-> Ao final esses comandos garantem que as dependências do projeto e os containers sejam construídos corretamente com as migrações e a aplicação disponível em localhost:8000 
+> Ao final esses comandos garantem que as dependências do projeto e os containers sejam construídos corretamente com as migrações e a aplicação disponível em localhost:8000.
+
+> Pode ser que o endereço localhost:8000 demore um pouco para responder por que o docker pode estar construindo a aplicação ainda.
+
+> Não é recomendado ter o composer como serviço dentro do arquivo docker-compose (mas vou entender que o usuário não necessáriamente tem o composer instalado na máquina). O ideal é abstrair isso para um Dockerfile e um entrypont.sh.
 
 ## 🧩 Funcionalidades
 
